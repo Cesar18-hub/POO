@@ -24,7 +24,7 @@ namespace P2_EXE3
             Console.Write("Z:");
             Z = double.Parse(Console.ReadLine());
             resultado = (X - Y) * (Z + 2) / Z;
-            Console.WriteLine("\nResultado: (" + X + "-" + Y + ")x(" + Z + "+2):" + Z + "=" + resultado);
+            Console.WriteLine($"\nResultado: ({X}-{Y})x({Z}+2):{Z}={resultado}");
 
             Console.ReadKey();
         }
