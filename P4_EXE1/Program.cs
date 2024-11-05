@@ -21,7 +21,7 @@ namespace P4_EXE1
             // Ler as alturas até que o usuário decida parar
             while (true)
             {
-                Console.Write($"Insira a altura da {n_pessoa}º pessoa: ");
+                Console.Write($"Insira a altura da {n_pessoa}º: ");
                 entrada = Console.ReadLine();
 
                 // Verifica se o usuário quer fazer a média
@@ -30,7 +30,7 @@ namespace P4_EXE1
                     break;
                 }
 
-                // Converte a entrada do usuário para double, meti para poder usar o m para sair do while
+                // Converte a entrada do usuário para double
                 double altura = double.Parse(entrada);
                 alturas.Add(altura); // Adiciona a altura à lista
                 n_pessoa++;
