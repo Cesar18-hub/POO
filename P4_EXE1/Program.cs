@@ -25,7 +25,7 @@ namespace P4_EXE1
                 entrada = Console.ReadLine();
 
                 // Verifica se o usuário quer fazer a média
-                if (entrada.ToLower() == "m")
+                if (entrada == "m")
                 {
                     break; 
                 }
