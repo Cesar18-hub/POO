@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace exercicios_ficha
 {
@@ -113,6 +114,75 @@ namespace exercicios_ficha
 
             Console.ReadKey();
             */
+            #endregion
+
+            #region EXE4
+            /*
+            int[] idades = new int[5];
+            double media;
+
+            for (int i = 0; i < idades.Length; i++)
+            {
+                Console.Write($"Escreva o nome da {i + 1}º pessoa: ");
+                idades[i] = int.Parse(Console.ReadLine());
+            }
+
+            media = (double)(idades[0] + idades[1] + idades[2] + idades[3] + idades[4]) / idades.Length;
+
+            Console.Write($"\nA media das idades é {media:F2}");
+
+            Console.ReadKey();
+            */
+            #endregion
+
+            #region EXE5
+
+            Console.WriteLine("Bem-vindo ao jogo Adivinha o Número!");
+
+            Random random = new Random(); //aray para gerar um numero aleatorio
+
+            int numero_pensado = random.Next(1, 101); // Número a ser adivinhado (1-100)
+            int tentativas = 10;
+            bool numero_adivinhado = false;
+
+            Console.WriteLine("Tente adivinhar o número entre 1 e 100. Tem 10 tentativas.");
+
+            while (tentativas > 0 && !numero_adivinhado)
+            {
+                Console.Write("\nDigite sua tentativa: ");
+                int tentativa;
+                bool entradaValida = int.TryParse(Console.ReadLine(), out tentativa);
+
+                if (!entradaValida || tentativa < 1 || tentativa > 100)
+                {
+                    Console.WriteLine("Por favor, insira um número válido entre 1 e 100.");
+                    continue;
+                }
+
+                tentativas--;
+
+                if (tentativa == numero_pensado)
+                {
+                    Console.WriteLine($"Voce adivinhou o número {numero_pensado}!");
+                    numero_adivinhado = true;
+                }
+                else if (tentativa < numero_pensado)
+                {
+                    Console.WriteLine($"O número pensado é maior que {tentativa}. Tentativas restantes: {tentativas}");
+                }
+                else
+                {
+                    Console.WriteLine($"O número pensado é menor que {tentativa}. Tentativas restantes: {tentativas}");
+                }
+            }
+
+            if (!numero_adivinhado)
+            {
+                Console.WriteLine($"\nEsgotou todas as tentativas. O número correto era {numero_pensado}.");
+            }
+
+            Console.ReadKey();
+
             #endregion
         }
     }
