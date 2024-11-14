@@ -136,8 +136,8 @@ namespace exercicios_ficha
             #endregion
 
             #region EXE5
-
-            Console.WriteLine("Bem-vindo ao jogo Adivinha o Número!");
+            /*
+            Console.WriteLine("Jogo Adivinha o Número!");
 
             Random random = new Random(); //aray para gerar um numero aleatorio
 
@@ -182,8 +182,37 @@ namespace exercicios_ficha
             }
 
             Console.ReadKey();
-
+            */
             #endregion
+
+            int[] PH = new int[5];
+            string[] solucoes = new string[5];
+
+            for (int i = 0; i < PH.Length; i++)
+            {
+                Console.Write($"digite o valor do PH{i + 1}: ");
+                PH[i] = int.Parse(Console.ReadLine());
+            }
+            for (int i = 0; i < solucoes.Length; i++)
+            {
+                if (PH[i] < 7)
+                {
+                    solucoes[i] = "ácido";
+                }
+                else if (PH[i] == 7)
+                            
+	            {
+                solucoes[i] = "neutro";
+                }
+                else
+                {
+                solucoes[i] = "alcalino";
+                }
+
+            Console.Write($"o PH{i + 1} é {solucoes[i]}");
+            }
+
+        Console.ReadKey();
         }
     }
 }
